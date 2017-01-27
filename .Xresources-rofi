@@ -1,0 +1,8 @@
+! "Color scheme for normal row" Set from: XResources
+rofi.color-normal:                   #282828, #d8d8d8, #282828, #ab4642, #282828
+! "Color scheme for urgent row" Set from: XResources
+rofi.color-urgent:                   #282828, #d8d8d8, #282828, #ab4642, #282828
+! "Color scheme for active row" Set from: XResources
+rofi.color-active:                   #282828, #d8d8d8, #282828, #ab4642, #282828
+! "Color scheme window" Set from: XResources
+rofi.color-window:                   argb:bb282828, #282828
