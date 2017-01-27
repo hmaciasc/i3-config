@@ -12,6 +12,7 @@ for_window [class="Deluge"] floating enable
 for_window [class="File-roller"] floating enable
 
 # Modkey
+set $alt Mod1
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -34,6 +35,9 @@ new_float pixel 5
 # switching between workspace
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
+
+# switch opened windows
+bindsym $alt+Tab exec rofi -show window
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -98,49 +102,56 @@ bindsym $mod+a focus parent
 # Take screenshot
 bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'
 
+# Workspaces names
+set $wsp1 1 
+set $wsp2 2 
+set $wsp3 3 
+set $wsp4 4 
+set $wsp5 5 
+set $wsp6 6 
+set $wsp7 7 ☘
+set $wsp8 8 
+set $wsp9 9 
+set $wsp10 10 
+
 # 0px border Windows
 for_window [class="Pantheon-terminal"] border none
-for_window [class="chrome"] border none, move container to workspace 2
+for_window [class="chrome"] border none
 for_window [class="Slack"] border none
-for_window [class="^Spotify$"] border none, move container to workspace 10
-for_window [class="Telegram"] move container to workspace 3
 for_window [class="Atom"] border none
-#for_window [class="Spotify"] border none, move container to workspace 10 
+for_window [class="^Spotify$"] border none
+for_window [class="Spotify"] border none
 
-set $workspace1 "1"
-set $workspace2 "2"
-set $workspace3 "3"
-set $workspace4 "4"
-set $workspace5 "5"
-set $workspace6 "6"
-set $workspace7 "7"
-set $workspace8 "8"
-set $workspace9 "9"
-set $workspace10 "10"
+# assign apps to workspaces
+assign [class="chrome"] $wsp2
+assign [class="Telegram"] $wsp3
+assign [class="Transmission"] $wsp9
+assign [class="Atom"] $wsp1
+assign [class="^Spotify$"] $wsp10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $workspace1
-bindsym $mod+Shift+2 move container to workspace $workspace2
-bindsym $mod+Shift+3 move container to workspace $workspace3
-bindsym $mod+Shift+4 move container to workspace $workspace4
-bindsym $mod+Shift+5 move container to workspace $workspace5
-bindsym $mod+Shift+6 move container to workspace $workspace6
-bindsym $mod+Shift+7 move container to workspace $workspace7
-bindsym $mod+Shift+8 move container to workspace $workspace8
-bindsym $mod+Shift+9 move container to workspace $workspace9
-bindsym $mod+Shift+0 move container to workspace $workspace10
+bindsym $mod+Shift+1 move container to workspace $wsp1
+bindsym $mod+Shift+2 move container to workspace $wsp2
+bindsym $mod+Shift+3 move container to workspace $wsp3
+bindsym $mod+Shift+4 move container to workspace $wsp4
+bindsym $mod+Shift+5 move container to workspace $wsp5
+bindsym $mod+Shift+6 move container to workspace $wsp6
+bindsym $mod+Shift+7 move container to workspace $wsp7
+bindsym $mod+Shift+8 move container to workspace $wsp8
+bindsym $mod+Shift+9 move container to workspace $wsp9
+bindsym $mod+Shift+0 move container to workspace $wsp10
 
 # switch to workspace
-bindsym $mod+1 workspace $workspace1
-bindsym $mod+2 workspace $workspace2
-bindsym $mod+3 workspace $workspace3
-bindsym $mod+4 workspace $workspace4
-bindsym $mod+5 workspace $workspace5
-bindsym $mod+6 workspace $workspace6
-bindsym $mod+7 workspace $workspace7
-bindsym $mod+8 workspace $workspace8
-bindsym $mod+9 workspace $workspace9
-bindsym $mod+0 workspace $workspace10
+bindsym $mod+1 workspace $wsp1
+bindsym $mod+2 workspace $wsp2
+bindsym $mod+3 workspace $wsp3
+bindsym $mod+4 workspace $wsp4
+bindsym $mod+5 workspace $wsp5
+bindsym $mod+6 workspace $wsp6
+bindsym $mod+7 workspace $wsp7
+bindsym $mod+8 workspace $wsp8
+bindsym $mod+9 workspace $wsp9
+bindsym $mod+0 workspace $wsp10
 
 
 # reload the configuration file
